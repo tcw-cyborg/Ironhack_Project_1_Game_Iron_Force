@@ -1,11 +1,14 @@
 const img = new Image();
 img.src='../graphicAsset/backgrounds/bg7a.png';
 
-let canvas, ctx;
+let canvas = document.querySelector('#game-display canvas');
+let ctx = canvas.getContext('2d');
+const W = ctx.canvas.width;
+const H = ctx.canvas.height;
 
 img.onload = function() {
-  canvas = document.getElementById('canvas');
-  ctx = canvas.getContext('2d');
+  canvas;
+  ctx;
   updateCanvas();
 };
 
