@@ -1,7 +1,7 @@
 const img = new Image();
-img.src='../graphicAsset/backgrounds/bg7a.png';
+img.src = "../graphicAsset/backgrounds/bg7a.png";
 
-img.onload = function() {
+img.onload = function () {
   canvas;
   ctx;
   updateCanvas();
@@ -13,12 +13,12 @@ const canvasImage = {
   y: 0,
   speed: 3,
 
-  move: function() {
+  move: function () {
     this.y += this.speed;
     this.y %= canvas.height;
   },
 
-  draw: function() {
+  draw: function () {
     ctx.drawImage(this.img, 0, this.y);
     if (this.speed < 0) {
       ctx.drawImage(this.img, 0, this.y + this.img.height);
