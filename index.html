@@ -9,11 +9,28 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div class="game-intro">
+      <img src="../graphicAsset/divers/iron-force-racing-black-white--1.svg" alt="image-iron-force-logo" class="logo-img">
+      <br>
+      <button id="start-button">Play !</button>
+      <br>
+      <p>Use directional arrows to control the spaceship!</p>
+      <br>
+      <img src="../graphicAsset/divers/fleches-clavier.png" alt="image-fleches-clavier" class="arrows-img">
+      <br>
+      <p>Use space bar to shot!</p>
+      <br>
+      <img src="../graphicAsset/divers/space-bar-2" alt="image-space-bar" class="space-img">
+    </div>
+
     <div id="game-display">
       <canvas id="canvas" width="1499" height="2667"></canvas>
+      <img src="../graphicAsset/spaceship/player_4.png" alt="ship picture" id="ship">
     </div>
-    
+
+    <script src="main.js"></script>
     <script src="background.js"></script>
-    <script src="class-element.js"></script>
+    <script src="player.js"></script>
+    <script src="player-2.js"></script>
   </body>
 </html>

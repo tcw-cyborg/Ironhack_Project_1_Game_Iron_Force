@@ -1,28 +1,12 @@
-class Element {
-  constructor(health) {
-    this.health = health;
-  }
-
-  shot() {
-
-  }
-
-  collision() {
-
-  }
-}
-
-
-class Player extends Element {
-  constructor(health) {
-    super(health);
+class Player {
+  constructor() {
     const img = document.createElement('img');
     img.onload = () => {
       this.img = img;
 
       const imgRatio = img.naturalWidth/img.naturalWidth;
 
-      this.w = 200;
+      this.w = 150;
       this.h = this.w/imgRatio;
 
       this.x = W/2-this.w/2;
@@ -50,12 +34,3 @@ class Player extends Element {
     this.y += 10;
   }
 }
-
-
-class Enemies extends Element {
-  constructor(health) {
-    super(health);
-  }
-}
-
-

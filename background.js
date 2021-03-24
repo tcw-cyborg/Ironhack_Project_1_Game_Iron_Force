@@ -1,11 +1,6 @@
 const img = new Image();
 img.src='../graphicAsset/backgrounds/bg7a.png';
 
-let canvas = document.querySelector('#game-display canvas');
-let ctx = canvas.getContext('2d');
-const W = ctx.canvas.width;
-const H = ctx.canvas.height;
-
 img.onload = function() {
   canvas;
   ctx;
@@ -16,7 +11,7 @@ const canvasImage = {
   img: img,
   x: 0,
   y: 0,
-  speed: 1,
+  speed: 3,
 
   move: function() {
     this.y += this.speed;
