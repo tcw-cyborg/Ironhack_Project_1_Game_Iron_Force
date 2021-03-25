@@ -42,5 +42,9 @@ document.onkeydown = function (event) {
       ship.x += 25;
       ship.draw();
       break;
+    case "Control":
+      console.log("fire");
+
+      break;
   }
 };
