@@ -3,6 +3,7 @@ const ctx = canvas.getContext("2d");
 const W = ctx.canvas.width;
 const H = ctx.canvas.height;
 let player;
+let enemy;
 let raf;
 let frames = 0;
 let gameover;
@@ -12,6 +13,7 @@ function draw() {
   canvasImage.draw();
   canvasImage.move();
   player.draw();
+  enemy.draw();
 }
 
 function animeLoop() {
@@ -28,6 +30,7 @@ function startGame() {
   }
   gameover = false;
   player = new Player();
+  enemy = new Enemy();
   requestAnimationFrame(animeLoop);
 }
 
