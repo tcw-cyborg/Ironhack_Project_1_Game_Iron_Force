@@ -4,7 +4,6 @@ img.src = "../graphicAsset/backgrounds/bg7a.png";
 img.onload = function () {
   canvas;
   ctx;
-  updateCanvas();
 };
 
 const canvasImage = {
@@ -27,9 +26,3 @@ const canvasImage = {
     }
   },
 };
-
-function updateCanvas() {
-  canvasImage.move();
-  canvasImage.draw();
-  requestAnimationFrame(updateCanvas);
-}

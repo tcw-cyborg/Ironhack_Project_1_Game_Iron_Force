@@ -17,30 +17,35 @@ class Player {
 
   draw() {
     if (!this.img) return;
-    ctx.clearRect(0, 0, 1499, 2667);
     ctx.drawImage(this.img, this.x, this.y, this.w, this.h);
   }
 }
 
-const ship = new Player();
-
 document.onkeydown = function (event) {
   switch (event.key) {
     case "ArrowUp":
-      ship.y += -25;
-      ship.draw();
+      if (player.y >= -28) {
+        player.y += -25;
+      }
+      player.draw();
       break;
     case "ArrowDown":
-      ship.y += 25;
-      ship.draw();
+      if (player.y <= 2185) {
+        player.y += 25;
+      }
+      player.draw();
       break;
     case "ArrowLeft":
-      ship.x += -25;
-      ship.draw();
+      if (player.x >= -70) {
+        player.x += -25;
+      }
+      player.draw();
       break;
     case "ArrowRight":
-      ship.x += 25;
-      ship.draw();
+      if (player.x <= 1070) {
+        player.x += 25;
+      }
+      player.draw();
       break;
     case "Control":
       console.log("fire");
