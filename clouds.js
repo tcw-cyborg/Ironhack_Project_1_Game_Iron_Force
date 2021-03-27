@@ -1,16 +1,16 @@
-const img = new Image();
-img.src = "../graphicAsset/backgrounds/bg7a.png";
+const imgClouds = new Image();
+imgClouds.src = "../graphicAsset/backgrounds/bg7b.png";
 
-img.onload = function () {
+imgClouds.onload = function () {
   canvas;
   ctx;
 };
 
-const canvasImage = {
-  img: img,
+const canvasClouds = {
+  img: imgClouds,
   x: 0,
   y: 0,
-  speed: 3,
+  speed: 6,
 
   move: function () {
     this.y += this.speed;

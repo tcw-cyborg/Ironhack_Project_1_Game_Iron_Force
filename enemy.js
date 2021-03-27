@@ -10,7 +10,7 @@ class Enemy {
       this.h = this.w / imgRatio;
 
       this.x = W / 2 - this.w / 2;
-      this.y = H - this.h - 950;
+      this.y = H - this.h - 2000;
     };
     img.src = "../graphicAsset/enemies/en_13.png";
   }

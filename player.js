@@ -19,6 +19,10 @@ class Player {
     if (!this.img) return;
     ctx.drawImage(this.img, this.x, this.y, this.w, this.h);
   }
+
+  shot() {
+    
+  }
 }
 
 document.onkeydown = function (event) {
@@ -49,7 +53,7 @@ document.onkeydown = function (event) {
       break;
     case "Control":
       console.log("fire");
-
+      player.shot();
       break;
   }
 };
