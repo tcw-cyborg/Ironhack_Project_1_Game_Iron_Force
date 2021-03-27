@@ -8,9 +8,7 @@
 
 5/ Générer aléatoirement l'apparition des "enemies".
 
-6/ Dissocier les controls de la bande sonore par rapport aux controls du "player".
+6/ Associer un son à chaque tir du "player" en bonus.
 
-7/ Associer un son à chaque tir du "player" en bonus.
-
-8/ Associer un son à chaque tir des "enemies" en bonus.
+7/ Associer un son à chaque tir des "enemies" en bonus.
 
