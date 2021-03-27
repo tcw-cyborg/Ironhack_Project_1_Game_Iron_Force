@@ -21,7 +21,10 @@ class Player {
   }
 
   shot() {
-    document.getElementById("playFire").style.display = "initial";
+    //document.getElementById("playFire").style.display = "initial";
+
+    // Creer un nouveau tir
+    playerFires.push(new PlayerFire(3, player.x + 0.5 * player.w)) // [ {x: , y: , w: w, h: , speed: } ]
   }
 }
 

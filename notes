@@ -4,7 +4,8 @@
 
 3/ Créer "score" qui donne 1 point par "enemy" détruit ; non affichage de l'"enemy" voire avec son "explosion" en bonus.
 
-4/ Créer "health" du player, si "health = 0" alors "gameover" ; non affichage du "player" voire avec son "explosion" en bonus.
+4/ Créer "health" du player, perd 1 point de vie chaque fois qu'on se fait toucher par "enenyFire" ou collision avec "enemy".
+   Si "health = 0" alors "gameover" ; non affichage du "player" voire avec son "explosion" en bonus.
 
 5/ Générer aléatoirement l'apparition des "enemies".
 
