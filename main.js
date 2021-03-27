@@ -10,26 +10,26 @@ let raf;
 let frames = 0;
 let gameover;
 
-
-
 function draw() {
   ctx.clearRect(0, 0, W, H);
+  
   canvasBeach.draw();
   canvasBeach.move();
+  
   canvasClouds.draw();
   canvasClouds.move();
+  
   player.draw();
-  // player.shot();
-  //playerFire.draw();
-
-  // pour chacun des tirs du tableau playFires, on doit appeler la methode .draw() de l'objet
-  playerFires.forEach(function(el) {
+  playerFires.forEach(function (el) {
     el.move();
     el.draw();
   });
 
   enemy.draw();
-  //enemyFire.draw();
+  enemyFires.forEach(function (el){
+    el.move();
+    el.draw();
+  });
 }
 
 function animeLoop() {

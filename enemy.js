@@ -24,7 +24,22 @@ class Enemy {
   move() {
     this.y += this.speed;
   }
+
+  // shot() {
+  //   enemyFires.push(
+  //     new enemyFire(50, enemy.x + 0.5 * enemy.w, enemy.y - enemy.h)
+  //   );
+  // }
 }
+
+// document.onkeydown = function (event) {
+//   switch (event.key) {
+//     case "5":
+//       console.log("enemyFire");
+//       enemy.shot();
+//       break;
+//   }
+// };
 
 // function rand(min, max) {
 //   let random = Math.floor(Math.random() * (max - min) + min);
