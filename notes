@@ -1,0 +1,16 @@
+1/ Associer le "playerFire" (qui se déclenche en appuyant sur ctrl) avec le "player".
+
+2/ Associer l'"enemyFire" (qui se déclenche automatiquement toutes les 3 secondes) avec l'"enemy".
+
+3/ Créer "score" qui donne 1 point par "enemy" détruit ; non affichage de l'"enemy" voire avec son "explosion" en bonus.
+
+4/ Créer "health" du player, si "health = 0" alors "gameover" ; non affichage du "player" voire avec son "explosion" en bonus.
+
+5/ Générer aléatoirement l'apparition des "enemies".
+
+6/ Dissocier les controls de la bande sonore par rapport aux controls du "player".
+
+7/ Associer un son à chaque tir du "player" en bonus.
+
+8/ Associer un son à chaque tir des "enemies" en bonus.
+

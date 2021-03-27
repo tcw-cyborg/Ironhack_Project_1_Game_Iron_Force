@@ -21,7 +21,7 @@ class Player {
   }
 
   shot() {
-    
+    document.getElementById("playFire").style.display = "initial";
   }
 }
 
