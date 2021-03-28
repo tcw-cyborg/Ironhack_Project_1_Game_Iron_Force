@@ -10,7 +10,7 @@ class EnemyFire {
       this.img = img;
       const imgRatio = img.naturalWidth / img.naturalWidth;
     };
-    img.src = "../graphicAsset/projectiles/enemies/shoot_3.png";
+    img.src = "../codeFiles/ressources/images/enemyFire.png";
   }
 
   draw() {

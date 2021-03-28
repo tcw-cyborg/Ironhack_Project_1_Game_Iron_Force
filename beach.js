@@ -1,5 +1,5 @@
 const imgBeach = new Image();
-imgBeach.src = "../graphicAsset/backgrounds/bg7a.png";
+imgBeach.src = "../codeFiles/ressources/images/beach.png";
 
 imgBeach.onload = function () {
   canvas;
@@ -10,7 +10,7 @@ const canvasBeach = {
   img: imgBeach,
   x: 0,
   y: 0,
-  speed: 3,
+  speed: 4,
 
   move: function () {
     this.y += this.speed;

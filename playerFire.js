@@ -10,7 +10,7 @@ class PlayerFire {
       this.img = img;
       const imgRatio = img.naturalWidth / img.naturalWidth;
     };
-    img.src = "../graphicAsset/projectiles/spaceship/shoot_5.png";
+    img.src = "../codeFiles/ressources/images/playerFire.png";
   }
 
   draw() {

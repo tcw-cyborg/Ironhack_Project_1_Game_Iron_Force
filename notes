@@ -1,15 +1,14 @@
-1/ Associer le "playerFire" (qui se déclenche en appuyant sur ctrl) avec le "player".
+Associer l'"enemyFire" (qui se déclenche automatiquement toutes les 3 secondes) avec l'"enemy".
 
-2/ Associer l'"enemyFire" (qui se déclenche automatiquement toutes les 3 secondes) avec l'"enemy".
+Si "enemy" détruit par "player" ; non affichage de l'"enemy" voire avec son "explosion" en bonus.
 
-3/ Créer "score" qui donne 1 point par "enemy" détruit ; non affichage de l'"enemy" voire avec son "explosion" en bonus.
+Si "player" se fait toucher par "enenyFire" ou collision avec "enemy" alors "gameover" ; non affichage du "player" voire avec son "explosion" en bonus.
 
-4/ Créer "health" du player, perd 1 point de vie chaque fois qu'on se fait toucher par "enenyFire" ou collision avec "enemy".
-   Si "health = 0" alors "gameover" ; non affichage du "player" voire avec son "explosion" en bonus.
+Générer aléatoirement l'apparition des "enemies".
 
-5/ Générer aléatoirement l'apparition des "enemies".
+Créer "Time" pour indiquer la durée de la partie ; il faut jouer longtemps pour gagner.
 
-6/ Associer un son à chaque tir du "player" en bonus.
+Associer un son à chaque tir du "player" en bonus.
 
-7/ Associer un son à chaque tir des "enemies" en bonus.
+Associer un son à chaque tir des "enemies" en bonus.
 

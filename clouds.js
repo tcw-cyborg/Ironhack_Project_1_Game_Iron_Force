@@ -1,5 +1,5 @@
 const imgClouds = new Image();
-imgClouds.src = "../graphicAsset/backgrounds/bg7b.png";
+imgClouds.src = "../codeFiles/ressources/images/clouds.png";
 
 imgClouds.onload = function () {
   canvas;
@@ -10,7 +10,7 @@ const canvasClouds = {
   img: imgClouds,
   x: 0,
   y: 0,
-  speed: 6,
+  speed: 8,
 
   move: function () {
     this.y += this.speed;

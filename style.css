@@ -22,11 +22,16 @@ body > div {
 }
 
 .logo-img {
-  width: 350px;
+  width: 800px;
 }
 
-.arrows-img {
-  width: 150px;
+.directions-keys-img {
+  width: 600px;
+}
+
+.w-key-img {
+  width: 50px;
+  height: auto;
 }
 
 body button {
@@ -37,11 +42,6 @@ body button {
   border: 0;
   border-radius: 5px;
   margin-bottom: 20px;
-}
-
-.ctrl-key-img {
-  width: 100px;
-  height: auto;
 }
 
 #game-display {

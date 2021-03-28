@@ -12,7 +12,7 @@ class Player {
       this.x = W / 2 - this.w / 2;
       this.y = H - this.h - 500;
     };
-    img.src = "../graphicAsset/spaceship/player_4.png";
+    img.src = "../codeFiles/ressources/images/player.png";
   }
 
   draw() {
@@ -41,13 +41,31 @@ document.onkeydown = function (event) {
       }
       player.draw();
       break;
+    case "K":
+      if (player.y <= 2185) {
+        player.y += 25;
+      }
+      player.draw();
+      break;
     case "4":
       if (player.x >= -70) {
         player.x += -25;
       }
       player.draw();
       break;
+    case "U":
+      if (player.x >= -70) {
+        player.x += -25;
+      }
+      player.draw();
+      break;
     case "6":
+      if (player.x <= 1070) {
+        player.x += 25;
+      }
+      player.draw();
+      break;
+    case "O":
       if (player.x <= 1070) {
         player.x += 25;
       }
@@ -60,7 +78,21 @@ document.onkeydown = function (event) {
       }
       player.draw();
       break;
+    case "L":
+      if (player.y <= 2185 && player.x <= 1070) {
+        player.y += 25;
+        player.x += 25;
+      }
+      player.draw();
+      break;
     case "1":
+      if (player.y <= 2185 && player.x >= -70) {
+        player.y += 25;
+        player.x += -25;
+      }
+      player.draw();
+      break;
+    case "J":
       if (player.y <= 2185 && player.x >= -70) {
         player.y += 25;
         player.x += -25;
@@ -81,7 +113,7 @@ document.onkeydown = function (event) {
       }
       player.draw();
       break;
-    case "Control":
+    case "W":
       console.log("fire");
       player.shot();
       break;

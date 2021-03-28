@@ -12,13 +12,13 @@ let gameover;
 
 function draw() {
   ctx.clearRect(0, 0, W, H);
-  
+
   canvasBeach.draw();
   canvasBeach.move();
-  
+
   canvasClouds.draw();
   canvasClouds.move();
-  
+
   player.draw();
   playerFires.forEach(function (el) {
     el.move();
@@ -26,7 +26,7 @@ function draw() {
   });
 
   enemy.draw();
-  enemyFires.forEach(function (el){
+  enemyFires.forEach(function (el) {
     el.move();
     el.draw();
   });
