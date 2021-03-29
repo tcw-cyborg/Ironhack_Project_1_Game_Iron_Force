@@ -1,14 +1,9 @@
-Associer l'"enemyFire" (qui se déclenche automatiquement toutes les 3 secondes) avec l'"enemy".
+Associer "enemyFire" (qui se déclenche automatiquement toutes les 3 secondes) avec "enemy" ; en bonus : associer un son à chaque tir des "enemies" .
 
-Si "enemy" détruit par "player" ; non affichage de l'"enemy" voire avec son "explosion" en bonus.
+Si "enemy" détruit par "player" ; non affichage de "enemy", en bonus : avec son "explosion".
 
-Si "player" se fait toucher par "enenyFire" ou collision avec "enemy" alors "gameover" ; non affichage du "player" voire avec son "explosion" en bonus.
+Si "player" se fait toucher par "enenyFire" ou collision avec "enemy" alors "gameover" ; non affichage du "player", en bonus : avec son "explosion".
 
-Générer aléatoirement l'apparition des "enemies".
+Générer aléatoirement l'apparition des "enemies" sur la largeur, et descendent vers le bas de l'écran tout en tirant.
 
 Créer "Time" pour indiquer la durée de la partie ; il faut jouer longtemps pour gagner.
-
-Associer un son à chaque tir du "player" en bonus.
-
-Associer un son à chaque tir des "enemies" en bonus.
-

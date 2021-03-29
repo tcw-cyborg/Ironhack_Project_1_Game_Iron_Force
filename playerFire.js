@@ -21,4 +21,9 @@ class PlayerFire {
   move() {
     this.y -= this.speed;
   }
+
+  play() {
+    const audio = new Audio("../codeFiles/ressources/sounds/playerFire.mp3");
+    audio.play();
+  }
 }

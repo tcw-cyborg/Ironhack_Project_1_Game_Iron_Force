@@ -116,6 +116,7 @@ document.onkeydown = function (event) {
     case "W":
       console.log("fire");
       player.shot();
+      playerFire.play();
       break;
   }
 };
