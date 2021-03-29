@@ -10,23 +10,60 @@
   </head>
   <body>
     <div class="game-intro">
-      <img src="../codeFiles/ressources/images/iron-force-logo.svg" alt="image-iron-force-logo" class="logo-img">
-      <br>
+      <img
+        src="../codeFiles/ressources/images/iron-force-logo.svg"
+        alt="image-iron-force-logo"
+        class="logo-img"
+      />
+      <br />
       <button id="start-button">Play !</button>
-      <br><p>Activate caps lock and num lock !</p>
-      <br>
+      <br />
+      <p>
+        Activate
+        <img
+          src="../codeFiles/ressources/images/capslock-key.png"
+          alt="image-capslock-key"
+          class="capslock"
+        />
+        and
+        <img
+          src="../codeFiles/ressources/images/numlock-key.png"
+          alt="image-numlock-key"
+          class="numlock"
+        />
+        !
+      </p>
+      <br />
       <p>Use the keys below to control the spaceship !</p>
-      <br>
-      <img src="../codeFiles/ressources/images/directions-keys.png" alt="image-directions-keys" class="directions-keys-img">
-      <br>
-      <p>Use <img src="../codeFiles/ressources/images/W-key.png" alt="image-w-key" class="w-key-img"> key to shot !</p>
+      <br />
+      <img
+        src="../codeFiles/ressources/images/directions-keys.png"
+        alt="image-directions-keys"
+        class="directions-keys-img"
+      />
+      <br />
+      <p>
+        Use
+        <img
+          src="../codeFiles/ressources/images/w-key.png"
+          alt="image-w-key"
+          class="w-key-img"
+        />
+        to shot !
+      </p>
     </div>
 
     <div id="game-display">
       <canvas id="canvas" width="1499" height="2667"></canvas>
     </div>
 
-    <audio src="../codeFiles/ressources/sounds/dangerZone.mp3" controls preload="true" autoplay="true" loop="true"></audio>
+    <audio
+      src="../codeFiles/ressources/sounds/dangerZone.mp3"
+      controls
+      preload="true"
+      autoplay="true"
+      loop="true"
+    ></audio>
 
     <script src="player.js"></script>
     <script src="playerFire.js"></script>
