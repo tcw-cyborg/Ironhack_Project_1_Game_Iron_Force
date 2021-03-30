@@ -25,4 +25,13 @@ class PlayerFire {
     const audio = new Audio("../codeFiles/ressources/sounds/playerFire.mp3");
     audio.play();
   }
+
+  hits(enemy) {
+    return (
+      enemy.x + enemy.w >= this.x &&
+      enemy.x <= this.x + this.w &&
+      enemy.y <= this.y + this.h &&
+      enemy.y + enemy.h >= this.y
+    );
+  }
 }

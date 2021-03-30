@@ -10,7 +10,7 @@ const canvasBeach = {
   img: imgBeach,
   x: 0,
   y: 0,
-  speed: 5,
+  speed: 4,
 
   move: function () {
     this.y += this.speed;

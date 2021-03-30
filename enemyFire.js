@@ -25,4 +25,13 @@ class EnemyFire {
     const audio = new Audio("../codeFiles/ressources/sounds/enemyFire.mp3");
     audio.play();
   }
+
+  hits(player) {
+    return (
+      player.x + player.w >= this.x &&
+      player.x <= this.x + this.w &&
+      player.y <= this.y + this.h &&
+      player.y + player.h >= this.y
+    );
+  }
 }
