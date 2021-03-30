@@ -35,7 +35,7 @@ class Enemy {
 let intervalEnemyFires = setInterval(function () {
   enemy.shot();
   enemyFire.play();
-}, 2000);
+}, 3000);
 
 // clearInterval(intervalEnemyFires);
 

@@ -30,86 +30,86 @@ class Player {
 const playerCommand = (document.onkeydown = function (event) {
   switch (event.key) {
     case "8":
-      if (player.y >= -28) {
-        player.y += -30;
+      if (player.y >= 10) {
+        player.y += -50;
       }
       player.draw();
       break;
     case "2":
-      if (player.y <= 2185) {
-        player.y += 30;
+      if (player.y <= 2160) {
+        player.y += 50;
       }
       player.draw();
       break;
     case "K":
-      if (player.y <= 2185) {
-        player.y += 30;
+      if (player.y <= 2160) {
+        player.y += 50;
       }
       player.draw();
       break;
     case "4":
-      if (player.x >= -70) {
-        player.x += -30;
+      if (player.x >= -49) {
+        player.x += -50;
       }
       player.draw();
       break;
     case "U":
-      if (player.x >= -70) {
-        player.x += -30;
+      if (player.x >= -49) {
+        player.x += -50;
       }
       player.draw();
       break;
     case "6":
-      if (player.x <= 1070) {
-        player.x += 30;
+      if (player.x <= 1030) {
+        player.x += 50;
       }
       player.draw();
       break;
     case "O":
-      if (player.x <= 1070) {
-        player.x += 30;
+      if (player.x <= 1030) {
+        player.x += 50;
       }
       player.draw();
       break;
     case "3":
-      if (player.y <= 2185 && player.x <= 1070) {
-        player.y += 30;
-        player.x += 30;
+      if (player.y <= 2160 && player.x <= 1030) {
+        player.y += 50;
+        player.x += 50;
       }
       player.draw();
       break;
     case "L":
-      if (player.y <= 2185 && player.x <= 1070) {
-        player.y += 30;
-        player.x += 30;
+      if (player.y <= 2160 && player.x <= 1030) {
+        player.y += 50;
+        player.x += 50;
       }
       player.draw();
       break;
     case "1":
-      if (player.y <= 2185 && player.x >= -70) {
-        player.y += 30;
-        player.x += -30;
+      if (player.y <= 2160 && player.x >= -49) {
+        player.y += 50;
+        player.x += -50;
       }
       player.draw();
       break;
     case "J":
-      if (player.y <= 2185 && player.x >= -70) {
-        player.y += 30;
-        player.x += -30;
+      if (player.y <= 2160 && player.x >= -49) {
+        player.y += 50;
+        player.x += -50;
       }
       player.draw();
       break;
     case "7":
-      if (player.y >= -28 && player.x >= -70) {
-        player.y += -30;
-        player.x += -30;
+      if (player.y >= 10 && player.x >= -49) {
+        player.y += -50;
+        player.x += -50;
       }
       player.draw();
       break;
     case "9":
-      if (player.y >= -28 && player.x <= 1070) {
-        player.y += -30;
-        player.x += 30;
+      if (player.y >= 10 && player.x <= 1030) {
+        player.y += -50;
+        player.x += 50;
       }
       player.draw();
       break;
