@@ -5,6 +5,7 @@ const H = ctx.canvas.height;
 let player;
 let playerFires = [];
 let enemy;
+let enemyFire;
 let enemyFires = [];
 let raf;
 let frames = 0;

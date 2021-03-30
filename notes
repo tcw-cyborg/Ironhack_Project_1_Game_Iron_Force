@@ -1,5 +1,3 @@
-Associer "enemyFire" (qui se déclenche automatiquement toutes les 3 secondes) avec "enemy" ; en bonus : associer un son à chaque tir des "enemies" .
-
 Si "enemy" détruit par "player" ; non affichage de "enemy", en bonus : avec son "explosion".
 
 Si "player" se fait toucher par "enenyFire" ou collision avec "enemy" alors "gameover" ; non affichage du "player", en bonus : avec son "explosion".

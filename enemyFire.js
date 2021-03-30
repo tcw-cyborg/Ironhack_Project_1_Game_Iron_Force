@@ -4,11 +4,10 @@ class EnemyFire {
     this.w = 250;
     this.h = 250;
     this.x = x - 0.5 * this.w;
-    this.y = y + 0.4 * this.h;
+    this.y = y + 3 * this.h;
     const img = document.createElement("img");
     img.onload = () => {
       this.img = img;
-      const imgRatio = img.naturalWidth / img.naturalWidth;
     };
     img.src = "../codeFiles/ressources/images/enemyFire.png";
   }
@@ -20,5 +19,10 @@ class EnemyFire {
 
   move() {
     this.y += this.speed;
+  }
+
+  play() {
+    const audio = new Audio("../codeFiles/ressources/sounds/enemyFire.mp3");
+    audio.play();
   }
 }

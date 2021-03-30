@@ -10,7 +10,7 @@ const canvasClouds = {
   img: imgClouds,
   x: 0,
   y: 0,
-  speed: 8,
+  speed: 10,
 
   move: function () {
     this.y += this.speed;

@@ -8,7 +8,6 @@ class PlayerFire {
     const img = document.createElement("img");
     img.onload = () => {
       this.img = img;
-      const imgRatio = img.naturalWidth / img.naturalWidth;
     };
     img.src = "../codeFiles/ressources/images/playerFire.png";
   }
