@@ -5,6 +5,7 @@ const H = ctx.canvas.height;
 let player;
 let playerFires = [];
 let enemy;
+let enemies = [];
 let enemyFire;
 let enemyFires = [];
 let raf;
@@ -26,10 +27,20 @@ function draw() {
     el.draw();
   });
 
-  enemy.draw();
+  // enemy.draw();
   enemyFires.forEach(function (el) {
     el.move();
     el.draw();
+  });
+
+  if (frames % 150 === 0) {
+    enemy = new Enemy();
+    enemies.push(enemy);
+  }
+
+  enemies.forEach(function (enemy) {
+    enemy.y += 5;
+    enemy.draw();
   });
 }
 
@@ -48,7 +59,7 @@ function startGame() {
   gameover = false;
   player = new Player();
   playerFire = new PlayerFire();
-  enemy = new Enemy();
+  // enemy = new Enemy();
   enemyFire = new EnemyFire();
   requestAnimationFrame(animeLoop);
 }

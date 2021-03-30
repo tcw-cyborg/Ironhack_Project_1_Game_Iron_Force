@@ -1,5 +1,8 @@
+function random(from, to) {
+  return Math.floor(from + Math.random() * (to - from));
+}
 class Enemy {
-  constructor(speed) {
+  constructor(speed, x, y) {
     this.speed = speed;
     const img = document.createElement("img");
     img.onload = () => {
@@ -10,8 +13,11 @@ class Enemy {
       this.w = 450;
       this.h = this.w / imgRatio;
 
-      this.x = W / 2 - this.w / 2;
-      this.y = H - this.h - 2000;
+      // this.x = W / 2 - this.w / 2;
+      // this.y = H - this.h - 2000;
+
+      this.x = random(0, W - this.w);
+      this.y = -this.h;
     };
     img.src = "../codeFiles/ressources/images/enemy.png";
   }
@@ -37,7 +43,7 @@ let intervalEnemyFires = setInterval(function () {
   enemyFire.play();
 }, 3000);
 
-// clearInterval(intervalEnemyFires);
+clearInterval(intervalEnemyFires);
 
 // const enemyCommand = (document.onkeydown = function (event) {
 //   switch (event.key) {
@@ -132,17 +138,3 @@ let intervalEnemyFires = setInterval(function () {
 //       break;
 //   }
 // });
-
-// function rand(min, max) {
-//   let random = Math.floor(Math.random() * (max - min) + min);
-//   return random;
-// }
-
-// rand(1, 10);
-// let result = 0;
-// setInterval(function() {
-//   const $div = document.createElement('div');
-//   $div.className = "enemies";
-//   $div.style.left = `${rand(0, window.innerWidth)}px`;
-//   $div.style.top = `${rand(0, window.innerHeight)}px`;
-// })
