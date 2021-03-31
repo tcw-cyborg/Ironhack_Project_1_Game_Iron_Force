@@ -1,10 +1,9 @@
 Si "enemy" détruit par "player", non affichage de "enemy", en bonus : avec son "explosion" ; et le jeu continue.
 
-Si "player" se fait toucher par "enenyFire" ou collision avec "enemy", en bonus : avec son "explosion" ; alors "gameover" ; 
+Si "player" se fait toucher par "enenyFire" ou collision avec "enemy", en bonus : avec son "explosion" ; alors "gameover".
 
-Créer "Time" pour indiquer la durée de la partie ; il faut jouer longtemps pour gagner.
+"gameover" fonctionne mal.
 
-Croper les images : player, enemy et les 2 projectiles.
+"play!" ne fonctionne pas.
 
-Pourquoi "autoplay" ne fonctionne pas ?
-
+"autoplay" ne fonctionne pas.

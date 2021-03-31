@@ -12,6 +12,7 @@ let enemyFires = [];
 let raf;
 let frames = 0;
 let gameover;
+let time;
 
 function draw() {
   ctx.clearRect(0, 0, W, H);
@@ -61,9 +62,15 @@ function draw() {
   for (playerFire of playerFires) {
     if (playerFire.hits(enemy)) {
       console.log("Boom!");
-      gameover = true;
+      gameover = false;
     }
   }
+
+  ctx.font = "100px Arial";
+  ctx.textAlign = "right";
+  ctx.fillStyle = "red";
+  ctx.fillText(`Time : ${time}`, W-50, 100);
+  time++;
 }
 
 function animeLoop() {
@@ -79,6 +86,7 @@ function startGame() {
     cancelAnimationFrame(raf);
   }
   gameover = false;
+  time = 0;
   player = new Player();
   playerFire = new PlayerFire();
   enemy = new Enemy();

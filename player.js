@@ -4,10 +4,8 @@ class Player {
     img.onload = () => {
       this.img = img;
 
-      const imgRatio = img.naturalWidth / img.naturalWidth;
-
-      this.w = 500;
-      this.h = this.w / imgRatio;
+      this.w = 400;
+      this.h = 500;
 
       this.x = W / 2 - this.w / 2;
       this.y = H - this.h - 500;
@@ -30,7 +28,7 @@ class Player {
 const playerCommand = (document.onkeydown = function (event) {
   switch (event.key) {
     case "8":
-      if (player.y >= 10) {
+      if (player.y >= 30) {
         player.y += -50;
       }
       player.draw();
@@ -48,66 +46,66 @@ const playerCommand = (document.onkeydown = function (event) {
       player.draw();
       break;
     case "4":
-      if (player.x >= -49) {
+      if (player.x >= 5) {
         player.x += -50;
       }
       player.draw();
       break;
     case "U":
-      if (player.x >= -49) {
+      if (player.x >= 5) {
         player.x += -50;
       }
       player.draw();
       break;
     case "6":
-      if (player.x <= 1030) {
+      if (player.x <= 1070) {
         player.x += 50;
       }
       player.draw();
       break;
     case "O":
-      if (player.x <= 1030) {
+      if (player.x <= 1070) {
         player.x += 50;
       }
       player.draw();
       break;
     case "3":
-      if (player.y <= 2160 && player.x <= 1030) {
+      if (player.y <= 2160 && player.x <= 1070) {
         player.y += 50;
         player.x += 50;
       }
       player.draw();
       break;
     case "L":
-      if (player.y <= 2160 && player.x <= 1030) {
+      if (player.y <= 2160 && player.x <= 1070) {
         player.y += 50;
         player.x += 50;
       }
       player.draw();
       break;
     case "1":
-      if (player.y <= 2160 && player.x >= -49) {
+      if (player.y <= 2160 && player.x >= 5) {
         player.y += 50;
         player.x += -50;
       }
       player.draw();
       break;
     case "J":
-      if (player.y <= 2160 && player.x >= -49) {
+      if (player.y <= 2160 && player.x >= 5) {
         player.y += 50;
         player.x += -50;
       }
       player.draw();
       break;
     case "7":
-      if (player.y >= 10 && player.x >= -49) {
+      if (player.y >= 30 && player.x >= 5) {
         player.y += -50;
         player.x += -50;
       }
       player.draw();
       break;
     case "9":
-      if (player.y >= 10 && player.x <= 1030) {
+      if (player.y >= 30 && player.x <= 1070) {
         player.y += -50;
         player.x += 50;
       }

@@ -2,16 +2,14 @@ function random(from, to) {
   return Math.floor(from + Math.random() * (to - from));
 }
 class Enemy {
-  constructor(speed, x, y) {
+  constructor(speed) {
     this.speed = speed;
     const img = document.createElement("img");
     img.onload = () => {
       this.img = img;
 
-      const imgRatio = img.naturalWidth / img.naturalWidth;
-
-      this.w = 450;
-      this.h = this.w / imgRatio;
+      this.w = 350;
+      this.h = 360;
 
       // this.x = W / 2 - this.w / 2;
       // this.y = H - this.h - 2000;
@@ -57,84 +55,84 @@ let intervalEnemyFires = setInterval(function () {
 // const enemyCommand = (document.onkeydown = function (event) {
 //   switch (event.key) {
 //     case "8":
-//       if (enemy.y >= -28) {
+//       if (enemy.y >= 8) {
 //         enemy.y += -25;
 //       }
 //       enemy.draw();
 //       break;
 //     case "2":
-//       if (enemy.y <= 2185) {
+//       if (enemy.y <= 2300) {
 //         enemy.y += 25;
 //       }
 //       enemy.draw();
 //       break;
 //     case "K":
-//       if (enemy.y <= 2185) {
+//       if (enemy.y <= 2300) {
 //         enemy.y += 25;
 //       }
 //       enemy.draw();
 //       break;
 //     case "4":
-//       if (enemy.x >= -70) {
+//       if (enemy.x >= 5) {
 //         enemy.x += -25;
 //       }
 //       enemy.draw();
 //       break;
 //     case "U":
-//       if (enemy.x >= -70) {
+//       if (enemy.x >= 5) {
 //         enemy.x += -25;
 //       }
 //       enemy.draw();
 //       break;
 //     case "6":
-//       if (enemy.x <= 1070) {
+//       if (enemy.x <= 1130) {
 //         enemy.x += 25;
 //       }
 //       enemy.draw();
 //       break;
 //     case "O":
-//       if (enemy.x <= 1070) {
+//       if (enemy.x <= 1130) {
 //         enemy.x += 25;
 //       }
 //       enemy.draw();
 //       break;
 //     case "3":
-//       if (enemy.y <= 2185 && enemy.x <= 1070) {
+//       if (enemy.y <= 2300 && enemy.x <= 1130) {
 //         enemy.y += 25;
 //         enemy.x += 25;
 //       }
 //       enemy.draw();
 //       break;
 //     case "L":
-//       if (enemy.y <= 2185 && enemy.x <= 1070) {
+//       if (enemy.y <= 2300 && enemy.x <= 1130) {
 //         enemy.y += 25;
 //         enemy.x += 25;
 //       }
 //       enemy.draw();
 //       break;
 //     case "1":
-//       if (enemy.y <= 2185 && enemy.x >= -70) {
+//       if (enemy.y <= 2300 && enemy.x >= 5) {
 //         enemy.y += 25;
 //         enemy.x += -25;
 //       }
 //       enemy.draw();
 //       break;
 //     case "J":
-//       if (enemy.y <= 2185 && enemy.x >= -70) {
+//       if (enemy.y <= 2300 && enemy.x >= 5) {
 //         enemy.y += 25;
 //         enemy.x += -25;
 //       }
 //       enemy.draw();
 //       break;
 //     case "7":
-//       if (enemy.y >= -28 && enemy.x >= -70) {
+//       if (enemy.y >= 8 && enemy.x >= 5) {
 //         enemy.y += -25;
 //         enemy.x += -25;
 //       }
 //       enemy.draw();
 //       break;
 //     case "9":
-//       if (enemy.y >= -28 && enemy.x <= 1070) {
+//       if (enemy.y >= 8 && enemy.x <= 1130) {
 //         enemy.y += -25;
 //         enemy.x += 25;
 //       }

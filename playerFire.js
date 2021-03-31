@@ -1,8 +1,8 @@
 class PlayerFire {
   constructor(speed, x, y) {
     this.speed = speed;
-    this.w = 100;
-    this.h = 400;
+    this.w = 90;
+    this.h = 360;
     this.x = x - 0.5 * this.w;
     this.y = y + 0.4 * this.h;
     const img = document.createElement("img");

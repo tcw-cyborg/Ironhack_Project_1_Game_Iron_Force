@@ -2,9 +2,9 @@ class EnemyFire {
   constructor(speed, x, y) {
     this.speed = speed;
     this.w = 250;
-    this.h = 250;
+    this.h = 260;
     this.x = x - 0.5 * this.w;
-    this.y = y + 3 * this.h;
+    this.y = y + 2.5 * this.h;
     const img = document.createElement("img");
     img.onload = () => {
       this.img = img;
