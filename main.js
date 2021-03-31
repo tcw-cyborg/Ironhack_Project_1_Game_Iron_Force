@@ -13,6 +13,7 @@ let raf;
 let frames = 0;
 let gameover;
 let time;
+let result = 0;
 
 function draw() {
   ctx.clearRect(0, 0, W, H);
@@ -63,13 +64,15 @@ function draw() {
     if (playerFire.hits(enemy)) {
       console.log("Boom!");
       gameover = false;
+      enemies.pop(enemy);
+      playerFires.pop(playerFire);
     }
   }
 
   ctx.font = "100px Arial";
   ctx.textAlign = "right";
   ctx.fillStyle = "red";
-  ctx.fillText(`Time : ${time}`, W-50, 100);
+  ctx.fillText(`Time : ${time}`, W - 50, 100);
   time++;
 }
 
