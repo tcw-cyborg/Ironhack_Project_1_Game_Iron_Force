@@ -2,8 +2,7 @@ function random(from, to) {
   return Math.floor(from + Math.random() * (to - from));
 }
 class Enemy {
-  constructor(speed) {
-    this.speed = speed;
+  constructor() {
     const img = document.createElement("img");
     img.onload = () => {
       this.img = img;
