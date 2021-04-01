@@ -5,7 +5,6 @@ const H = ctx.canvas.height;
 let player;
 let playerFire;
 let playerFires = [];
-// let enemy = new Enemy;
 let enemies = [];
 let enemyFire;
 let enemyFires = [];
@@ -49,11 +48,11 @@ function draw() {
     enemies.push(new Enemy());
   }
 
-  // const randFrames = Math.floor(200 + Math.random()*300) // [200..500]
-  // if (frames % 200 === 0) {
+  // const randFrames = Math.floor(200 + Math.random() * 300); // [200..500]
+  // if (frames % 300 === 0) {
   //   // parmi les enemies, on va en tirer un au sort et le faire tirer
-  //   const theEnemy = Math.floor(Math.random()*(enemies.length));
-  //   theEnemy.shot();
+  //   const enemyShooter = Math.floor(Math.random() * randFrames);
+  //   enemyShooter.shot();
   // }
 
   //
