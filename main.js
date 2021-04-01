@@ -13,7 +13,7 @@ let raf;
 let frames = 0;
 let gameover;
 let time;
-let result = 0;
+let music = document.querySelector("#bandeOriginale");
 
 function draw() {
   ctx.clearRect(0, 0, W, H);
@@ -90,6 +90,7 @@ function startGame() {
   }
   gameover = false;
   time = 0;
+  music;
   player = new Player();
   playerFire = new PlayerFire();
   enemy = new Enemy();

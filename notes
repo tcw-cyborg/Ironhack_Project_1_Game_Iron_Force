@@ -1,9 +1,10 @@
-Si "enemy" détruit par "player", non affichage de "enemy", en bonus : avec son "explosion" ; et le jeu continue.
+Si "enemy" détruit par "player", non affichage de "enemy" et stop "enemyFire", en bonus : avec son "explosion" ; et le jeu continue.
 
-Si "player" se fait toucher par "enenyFire" ou collision avec "enemy", en bonus : avec son "explosion" ; alors "gameover".
+Si "player" se fait toucher par "enenyFire" ou collision avec "enemy", en bonus : avec son "explosion" ; puis "gameover".
 
-"gameover" fonctionne mal.
+"gameover" fonctionne mal, le jeu ne s'arrête pas totalement, le "player" se multiplie à chaque déplacement, la musique et les sons des tirs ennemis continuent,
+mais le "time" et l'arrivée des "enemies" s'arrêtent.
 
-"play!" ne fonctionne pas.
+"play!" ne fonctionne pas, le jeu démarre tout seul, chaque appui sur "play!" accélère les défilements.
 
-"autoplay" ne fonctionne pas.
+"autoplay" de la musique ne fonctionne pas, il faut appuyer sur lecture.
