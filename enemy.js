@@ -45,10 +45,10 @@ class Enemy {
   }
 }
 
-let intervalEnemyFires = setInterval(function () {
-  enemy.shot();
-  enemyFire.play();
-}, 3000);
+// let intervalEnemyFires = setInterval(function () {
+//   enemy.shot();
+//   enemyFire.play();
+// }, 3000);
 
 // clearInterval(intervalEnemyFires);
 

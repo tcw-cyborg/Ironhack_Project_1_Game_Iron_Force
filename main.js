@@ -5,7 +5,6 @@ const H = ctx.canvas.height;
 let player;
 let playerFire;
 let playerFires = [];
-let enemy;
 let enemies = [];
 let enemyFire;
 let enemyFires = [];
@@ -16,6 +15,10 @@ let time;
 let music = document.querySelector("#bandeOriginale");
 
 function draw() {
+  //
+  // toutes les 16ms
+  //
+
   ctx.clearRect(0, 0, W, H);
 
   canvasBeach.draw();
@@ -30,29 +33,48 @@ function draw() {
     el.draw();
   });
 
-  enemy.draw();
+  //
+  // move + draw de tous les tirs enemies
+  //
   enemyFires.forEach(function (el) {
     el.move();
     el.draw();
   });
 
-  if (frames % 200 === 0) {
-    enemy = new Enemy();
-    enemies.push(enemy);
+  //
+  // générer un new enemy toutes les 200 frames
+  //
+  if (frames % 50 === 0) {
+    enemies.push(new Enemy());
   }
 
+  // const randFrames = Math.floor(200 + Math.random()*300) // [200..500]
+  // if (frames % 300 === 0) {
+  //   // parmi les enemies, on va en tirer un au sort et le faire tirer
+  //   const theEnemy = Math.floor(Math.random()(enemies.length[i])
+  // }
+
+  //
+  // tracer et décalage de chaque vaisseau enemy vers le bas
+  //
   enemies.forEach(function (enemy) {
     enemy.y += 10;
     enemy.draw();
   });
 
-  for (enemy of enemies) {
+  //
+  // collisions entre vaisseaux ennemy et mon player
+  //
+  for (let enemy of enemies) {
     if (enemy.hits(player)) {
       console.log("crashed");
       gameover = true;
     }
   }
 
+  //
+  // collisions entre tirs ennemy et mon player
+  //
   for (enemyFire of enemyFires) {
     if (enemyFire.hits(player)) {
       console.log("touched");
@@ -60,14 +82,20 @@ function draw() {
     }
   }
 
-  for (playerFire of playerFires) {
-    if (playerFire.hits(enemy)) {
-      console.log("Boom!");
-      gameover = false;
-      enemies.pop(enemy);
-      playerFires.pop(playerFire);
-    }
-  }
+  //
+  // collisions entre les tirs du player et les vaisseaux enemy.
+  //
+  playerFires.forEach(function (playerFire, i) {
+    enemies.forEach(function (enemy, j) {
+      if (playerFire.hits(enemy)) {
+        console.log("Boom!");
+        // enlever l'enemi en question
+        enemies.splice(j, 1);
+        // enlever le tir en question
+        playerFires.splice(i, 1);
+      }
+    });
+  });
 
   ctx.font = "100px Arial";
   ctx.textAlign = "right";
@@ -77,29 +105,26 @@ function draw() {
 }
 
 function animeLoop() {
+  console.log("Anime Loop");
   frames++;
   draw();
   if (!gameover) {
-    requestAnimationFrame(animeLoop);
+    raf = requestAnimationFrame(animeLoop);
+  } else {
+    cancelAnimationFrame(raf);
   }
 }
 
 function startGame() {
-  if (raf) {
-    cancelAnimationFrame(raf);
-  }
   gameover = false;
   time = 0;
   music;
   player = new Player();
   playerFire = new PlayerFire();
-  enemy = new Enemy();
   enemyFire = new EnemyFire();
-  requestAnimationFrame(animeLoop);
+  raf = requestAnimationFrame(animeLoop);
 }
 
 document.getElementById("start-button").onclick = function () {
   startGame();
 };
-
-startGame();
