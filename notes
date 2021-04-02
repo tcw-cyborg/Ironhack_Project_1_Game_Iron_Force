@@ -1,12 +1,9 @@
 Créer les tirs ennemis.
 
-"gameover" s'affiche si "player" se fait toucher par "enenyFire" ou collision avec "enemy".
-
-"play!" ne fonctionne pas après un "gameover".
-
-"autoplay" de la musique ne fonctionne pas, il faut appuyer sur lecture.
+"gameover" s'affiche si "player" se fait toucher par "enenyFire";
 
 Bonus explosion "enemy" si touché par "playerFire".
 
 Bonus explosion "player" si touché par "enemyFire".
 
+Bonus explosions "player" et "enemy" si collision entre-eux.

@@ -12,7 +12,20 @@ let raf;
 let frames = 0;
 let gameover;
 let time;
-let music = document.querySelector("#bandeOriginale");
+
+function playMusic() {
+  let music = document.getElementById("bandeOriginale");
+  music.setAttribute("preload", "auto");
+  music.autobuffer = true;
+  music.load();
+  music.play();
+}
+
+function shot() {
+  enemyFires.push(
+    new EnemyFire(15, enemy.x + 0.5 * enemy.w, enemy.y - enemy.h)
+  );
+}
 
 function draw() {
   //
@@ -28,6 +41,7 @@ function draw() {
   canvasClouds.move();
 
   player.draw();
+
   playerFires.forEach(function (el) {
     el.move();
     el.draw();
@@ -42,25 +56,28 @@ function draw() {
   });
 
   //
-  // générer un new enemy toutes les 200 frames
+  // générer un new enemy toutes les 80 frames
   //
   if (frames % 80 === 0) {
     enemies.push(new Enemy());
   }
 
-  // const randFrames = Math.floor(200 + Math.random() * 300); // [200..500]
-  // if (frames % 300 === 0) {
-  //   // parmi les enemies, on va en tirer un au sort et le faire tirer
-  //   const enemyShooter = Math.floor(Math.random() * randFrames);
-  //   enemyShooter.shot();
-  // }
+  const randFrames = Math.floor(200 + Math.random() * 300); // [200..500]
+  if (frames % 300 === 0) {
+    // parmi les enemies, on va en tirer un au sort et le faire tirer
+    const enemyShooter = Math.floor(Math.random() * randFrames);
+    setInterval(function () {
+      enemyShooter.shot();
+      enemyFire.play();
+    }, 2000);
+  }
 
   //
   // tracer et décalage de chaque vaisseau enemy vers le bas
   //
-  enemies.forEach(function (enemy) {
-    enemy.y += 10;
-    enemy.draw();
+  enemies.forEach(function (el) {
+    el.y += 10;
+    el.draw();
   });
 
   //
@@ -70,6 +87,8 @@ function draw() {
     if (enemy.hits(player)) {
       console.log("crashed");
       gameover = true;
+      alert("Crashed ! GAME OVER !!!");
+      document.location.reload();
     }
   }
 
@@ -80,6 +99,8 @@ function draw() {
     if (enemyFire.hits(player)) {
       console.log("touched");
       gameover = true;
+      alert("Touched ! GAME OVER !!!");
+      document.location.reload();
     }
   }
 
@@ -119,7 +140,7 @@ function animeLoop() {
 function startGame() {
   gameover = false;
   time = 0;
-  music;
+  playMusic();
   player = new Player();
   playerFire = new PlayerFire();
   enemyFire = new EnemyFire();
