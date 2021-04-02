@@ -64,12 +64,12 @@ function draw() {
 
   const randFrames = Math.floor(200 + Math.random() * 300); // [200..500]
   if (frames % 300 === 0) {
-    // parmi les enemies, on va en tirer un au sort et le faire tirer
+    // parmi les enemies, on va en tirer un au sort et le faire tirer toutes les 3 secondes
     const enemyShooter = Math.floor(Math.random() * randFrames);
     setInterval(function () {
       enemyShooter.shot();
       enemyFire.play();
-    }, 2000);
+    }, 3000);
   }
 
   //
