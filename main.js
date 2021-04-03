@@ -21,12 +21,6 @@ function playMusic() {
   music.play();
 }
 
-function shot() {
-  enemyFires.push(
-    new EnemyFire(15, enemy.x + 0.5 * enemy.w, enemy.y - enemy.h)
-  );
-}
-
 function draw() {
   //
   // toutes les 16ms
@@ -64,12 +58,12 @@ function draw() {
 
   const randFrames = Math.floor(200 + Math.random() * 300); // [200..500]
   if (frames % 300 === 0) {
-    // parmi les enemies, on va en tirer un au sort et le faire tirer toutes les 3 secondes
-    const enemyShooter = Math.floor(Math.random() * randFrames);
+    // parmi les enemies, on va en tirer un au sort et le faire tirer (toutes les 2 secondes, tant qu'il n'est pas détruit)
+    const enemyShooter = Math.floor(randFrames + Math.random() * enemies.length);
     setInterval(function () {
       enemyShooter.shot();
       enemyFire.play();
-    }, 3000);
+    }, 2000);
   }
 
   //
