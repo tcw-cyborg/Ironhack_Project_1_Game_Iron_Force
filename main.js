@@ -15,7 +15,6 @@ let raf;
 let frames = 0;
 let gameover;
 let score;
-let time;
 
 function playMusic() {
   let music = document.getElementById("soundTrack");
@@ -24,14 +23,6 @@ function playMusic() {
   music.load();
   music.play();
 }
-
-// function enemyShots() {
-//   enemyFires.push(
-//     new EnemyFire(15, enemy.x + 0.5 * enemy.w, enemy.y - enemy.h)
-//   );
-//   const audio = new Audio("../codeFiles/ressources/sounds/enemyFire.mp3");
-//   audio.play();
-// }
 
 function draw() {
   //
@@ -70,7 +61,7 @@ function draw() {
   });
 
   //
-  // générer un new enemy toutes les 250 frames
+  // générer un ne enemy toutes les 250 frames
   //
   if (frames % 250 === 0) {
     enemies.push(new Enemy());
@@ -81,7 +72,7 @@ function draw() {
   //   // parmi les enemies, on va en tirer un au sort et le faire tirer (toutes les 2 secondes, tant qu'il n'est pas détruit)
   //   const enemyShooter = Math.floor(randFrames + Math.random() * enemies.length);
   //   setInterval(function () {
-  //     enemyShooter.enemyShots();
+  //     enemyShooter.shot();
   //   }, 2000);
   // }
 
@@ -102,7 +93,7 @@ function draw() {
   // drone.draw();
 
   //
-  // générer un drone toutes les 200 frames
+  // générer un new drone toutes les 200 frames
   //
   if (frames % 200 === 0) {
     drones.push(new Drone());
@@ -183,22 +174,13 @@ function draw() {
       }
     });
   });
-
-  //
-  // affichage time
-  //
-  ctx.font = "100px Arial";
-  ctx.textAlign = "right";
-  ctx.fillStyle = "red";
-  ctx.fillText(`Time : ${time}`, W - 50, 200);
-  time++;
 }
 
 function scoreDisplay() {
   ctx.font = "100px Arial";
   ctx.textAlign = "right";
   ctx.fillStyle = "red";
-  ctx.fillText(`Score : ${score}`, W - 50, 100);
+  ctx.fillText(`Score : ${score} pts`, W - 50, 100);
 }
 
 function animeLoop() {
@@ -216,7 +198,6 @@ function animeLoop() {
 function startGame() {
   gameover = false;
   score = 0;
-  time = 0;
   playMusic();
   player = new Player();
   // playerFire = new PlayerFire(); // en statique pour reglage
