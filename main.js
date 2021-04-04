@@ -61,7 +61,7 @@ function draw() {
   });
 
   //
-  // générer un ne enemy toutes les 250 frames
+  // générer un new enemy toutes les 250 frames
   //
   if (frames % 250 === 0) {
     enemies.push(new Enemy());

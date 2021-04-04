@@ -19,9 +19,7 @@ class Player {
   }
 
   shot() {
-    playerFires.push(
-      new PlayerFire(50, player.x + 0.5 * player.w, player.y - player.h)
-    );
+    playerFires.push(new PlayerFire(50, player.x + 0.5 * player.w, player.y - player.h));
     const audio = new Audio("../codeFiles/ressources/sounds/playerFire.mp3");
     audio.play();
   }

@@ -26,9 +26,7 @@ class Enemy {
   }
 
   shot() {
-    enemyFires.push(
-      new EnemyFire(15, this.x + 0.5 * this.w, this.y - this.h)
-    );
+    enemyFires.push(new EnemyFire(15, this.x + 0.5 * this.w, this.y - this.h));
     const audio = new Audio("../codeFiles/ressources/sounds/enemyFire.mp3");
     audio.play();
   }
@@ -53,7 +51,7 @@ class Enemy {
 // // stop tirs auto enemy
 // clearInterval(intervalEnemyFires);
 
-// 
+//
 // reglage commandes enemy
 //
 // const enemyCommand = (document.onkeydown = function (event) {
