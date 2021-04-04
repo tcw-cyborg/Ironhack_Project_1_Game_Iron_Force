@@ -27,12 +27,10 @@ class Enemy {
 
   shot() {
     enemyFires.push(
-      new EnemyFire(15, enemy.x + 0.5 * enemy.w, enemy.y - enemy.h)
+      new EnemyFire(15, this.x + 0.5 * this.w, this.y - this.h)
     );
-  }
-
-  move() {
-    this.y += this.speed;
+    const audio = new Audio("../codeFiles/ressources/sounds/enemyFire.mp3");
+    audio.play();
   }
 
   hits(player) {
@@ -45,15 +43,15 @@ class Enemy {
   }
 }
 
-//
-// tirs auto enemy
-//
-let intervalEnemyFires = setInterval(function () {
-  enemy.shot();
-  enemyFire.play();
-}, 3000);
-// stop tirs auto enemy
-clearInterval(intervalEnemyFires);
+// //
+// // tirs auto enemy
+// //
+// let intervalEnemyFires = setInterval(function () {
+//   enemy.shot();
+//   enemyFire.play();
+// }, 3000);
+// // stop tirs auto enemy
+// clearInterval(intervalEnemyFires);
 
 // 
 // reglage commandes enemy

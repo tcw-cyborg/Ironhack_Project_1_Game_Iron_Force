@@ -26,10 +26,6 @@ class Drone {
     ctx.drawImage(this.img, this.x, this.y, this.w, this.h);
   }
 
-  move() {
-    this.y += this.speed;
-  }
-
   hits(player) {
     return (
       player.x + player.w >= this.x &&

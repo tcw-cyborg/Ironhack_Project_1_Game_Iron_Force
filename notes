@@ -4,6 +4,8 @@ Créer les tirs ennemis.
 
 Bonus explosion "enemy" si touché par "playerFire".
 
+Bonus explosion "drone" si touché par "playerFire".
+
 Bonus explosion "player" si touché par "enemyFire".
 
-Bonus explosions "player" et "enemy" si collision entre-eux.
+Bonus explosions "player" avec "enemy" ou "drone" si collision entre-eux.

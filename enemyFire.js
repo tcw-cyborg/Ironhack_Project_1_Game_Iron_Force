@@ -21,11 +21,6 @@ class EnemyFire {
     this.y += this.speed;
   }
 
-  play() {
-    const audio = new Audio("../codeFiles/ressources/sounds/enemyFire.mp3");
-    audio.play();
-  }
-
   hits(player) {
     return (
       player.x + player.w >= this.x &&

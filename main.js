@@ -14,6 +14,7 @@ let drones = [];
 let raf;
 let frames = 0;
 let gameover;
+let score;
 let time;
 
 function playMusic() {
@@ -23,6 +24,14 @@ function playMusic() {
   music.load();
   music.play();
 }
+
+// function enemyShots() {
+//   enemyFires.push(
+//     new EnemyFire(15, enemy.x + 0.5 * enemy.w, enemy.y - enemy.h)
+//   );
+//   const audio = new Audio("../codeFiles/ressources/sounds/enemyFire.mp3");
+//   audio.play();
+// }
 
 function draw() {
   //
@@ -72,17 +81,19 @@ function draw() {
   //   // parmi les enemies, on va en tirer un au sort et le faire tirer (toutes les 2 secondes, tant qu'il n'est pas détruit)
   //   const enemyShooter = Math.floor(randFrames + Math.random() * enemies.length);
   //   setInterval(function () {
-  //     enemyShooter.shot();
-  //     enemyFire.play();
+  //     enemyShooter.enemyShots();
   //   }, 2000);
   // }
 
   //
-  // décalage et tracer de chaque vaisseau enemy vers le bas
+  // décalage, tracer et tirs de chaque vaisseau enemy vers le bas
   //
   enemies.forEach(function (el) {
     el.y += 10;
     el.draw();
+    // setInterval(function () {
+    //   el.shot();
+    // }, 2000);
   });
 
   // //
@@ -150,6 +161,7 @@ function draw() {
         console.log("Boom!");
         // enlever l'enemi en question
         enemies.splice(j, 1);
+        score += 2;
         // enlever le tir en question
         playerFires.splice(i, 1);
       }
@@ -165,6 +177,7 @@ function draw() {
         console.log("Boom!");
         // enlever le drone en question
         drones.splice(k, 1);
+        score++;
         // enlever le tir en question
         playerFires.splice(i, 1);
       }
@@ -177,8 +190,15 @@ function draw() {
   ctx.font = "100px Arial";
   ctx.textAlign = "right";
   ctx.fillStyle = "red";
-  ctx.fillText(`Time : ${time}`, W - 50, 100);
+  ctx.fillText(`Time : ${time}`, W - 50, 200);
   time++;
+}
+
+function scoreDisplay() {
+  ctx.font = "100px Arial";
+  ctx.textAlign = "right";
+  ctx.fillStyle = "red";
+  ctx.fillText(`Score : ${score}`, W - 50, 100);
 }
 
 function animeLoop() {
@@ -190,10 +210,12 @@ function animeLoop() {
   } else {
     cancelAnimationFrame(raf);
   }
+  scoreDisplay();
 }
 
 function startGame() {
   gameover = false;
+  score = 0;
   time = 0;
   playMusic();
   player = new Player();
