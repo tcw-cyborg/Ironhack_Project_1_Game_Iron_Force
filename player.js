@@ -22,9 +22,14 @@ class Player {
     playerFires.push(
       new PlayerFire(50, player.x + 0.5 * player.w, player.y - player.h)
     );
+    const audio = new Audio("../codeFiles/ressources/sounds/playerFire.mp3");
+    audio.play();
   }
 }
 
+//
+// reglage commandes player
+//
 const playerCommand = (document.onkeydown = function (event) {
   if (gameover === false) {
     switch (event.key) {
@@ -115,7 +120,6 @@ const playerCommand = (document.onkeydown = function (event) {
       case "W":
         console.log("fire");
         player.shot();
-        playerFire.play();
         break;
     }
   }

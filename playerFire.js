@@ -21,17 +21,21 @@ class PlayerFire {
     this.y -= this.speed;
   }
 
-  play() {
-    const audio = new Audio("../codeFiles/ressources/sounds/playerFire.mp3");
-    audio.play();
-  }
-
   hits(enemy) {
     return (
       enemy.x + enemy.w >= this.x &&
       enemy.x <= this.x + this.w &&
       enemy.y <= this.y + this.h &&
       enemy.y + enemy.h >= this.y
+    );
+  }
+
+  hits(drone) {
+    return (
+      drone.x + drone.w >= this.x &&
+      drone.x <= this.x + this.w &&
+      drone.y <= this.y + this.h &&
+      drone.y + drone.h >= this.y
     );
   }
 }

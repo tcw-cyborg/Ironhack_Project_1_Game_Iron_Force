@@ -10,6 +10,7 @@ class Enemy {
       this.w = 350;
       this.h = 360;
 
+      // positions reglage
       // this.x = W / 2 - this.w / 2;
       // this.y = H - this.h - 2000;
 
@@ -44,13 +45,19 @@ class Enemy {
   }
 }
 
-// let intervalEnemyFires = setInterval(function () {
-//   enemy.shot();
-//   enemyFire.play();
-// }, 3000);
+//
+// tirs auto enemy
+//
+let intervalEnemyFires = setInterval(function () {
+  enemy.shot();
+  enemyFire.play();
+}, 3000);
+// stop tirs auto enemy
+clearInterval(intervalEnemyFires);
 
-// clearInterval(intervalEnemyFires);
-
+// 
+// reglage commandes enemy
+//
 // const enemyCommand = (document.onkeydown = function (event) {
 //   switch (event.key) {
 //     case "8":
@@ -137,7 +144,7 @@ class Enemy {
 //       }
 //       enemy.draw();
 //       break;
-//     case "X":
+//     case "W":
 //       console.log("fire");
 //       enemy.shot();
 //       enemyFire.play();

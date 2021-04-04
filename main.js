@@ -3,18 +3,21 @@ const ctx = canvas.getContext("2d");
 const W = ctx.canvas.width;
 const H = ctx.canvas.height;
 let player;
-let playerFire;
+// let playerFire; // en statique pour reglage
 let playerFires = [];
+// let enemy; // en statique pour reglage
 let enemies = [];
-let enemyFire;
+// let enemyFire; // en statique pour reglage
 let enemyFires = [];
+// let drone; // en statique pour reglage
+let drones = [];
 let raf;
 let frames = 0;
 let gameover;
 let time;
 
 function playMusic() {
-  let music = document.getElementById("bandeOriginale");
+  let music = document.getElementById("soundTrack");
   music.setAttribute("preload", "auto");
   music.autobuffer = true;
   music.load();
@@ -36,10 +39,18 @@ function draw() {
 
   player.draw();
 
+  //
+  // move + draw de tous les tirs du player
+  //
   playerFires.forEach(function (el) {
     el.move();
     el.draw();
   });
+
+  // //
+  // // draw enemy en statique pour reglage
+  // //
+  // enemy.draw();
 
   //
   // move + draw de tous les tirs enemies
@@ -50,32 +61,52 @@ function draw() {
   });
 
   //
-  // générer un new enemy toutes les 80 frames
+  // générer un new enemy toutes les 250 frames
   //
-  if (frames % 80 === 0) {
+  if (frames % 250 === 0) {
     enemies.push(new Enemy());
   }
 
-  const randFrames = Math.floor(200 + Math.random() * 300); // [200..500]
-  if (frames % 300 === 0) {
-    // parmi les enemies, on va en tirer un au sort et le faire tirer (toutes les 2 secondes, tant qu'il n'est pas détruit)
-    const enemyShooter = Math.floor(randFrames + Math.random() * enemies.length);
-    setInterval(function () {
-      enemyShooter.shot();
-      enemyFire.play();
-    }, 2000);
-  }
+  // const randFrames = Math.floor(200 + Math.random() * 300); // [200..500]
+  // if (frames % 300 === 0) {
+  //   // parmi les enemies, on va en tirer un au sort et le faire tirer (toutes les 2 secondes, tant qu'il n'est pas détruit)
+  //   const enemyShooter = Math.floor(randFrames + Math.random() * enemies.length);
+  //   setInterval(function () {
+  //     enemyShooter.shot();
+  //     enemyFire.play();
+  //   }, 2000);
+  // }
 
   //
-  // tracer et décalage de chaque vaisseau enemy vers le bas
+  // décalage et tracer de chaque vaisseau enemy vers le bas
   //
   enemies.forEach(function (el) {
     el.y += 10;
     el.draw();
   });
 
+  // //
+  // // draw drone en statique pour reglage
+  // //
+  // drone.draw();
+
   //
-  // collisions entre vaisseaux ennemy et mon player
+  // générer un drone toutes les 200 frames
+  //
+  if (frames % 200 === 0) {
+    drones.push(new Drone());
+  }
+
+  //
+  // decalage et tracer de chaque drone vers le bas
+  //
+  drones.forEach(function (el) {
+    el.y += 15;
+    el.draw();
+  });
+
+  //
+  // collisions entre vaisseaux enemy et mon player
   //
   for (let enemy of enemies) {
     if (enemy.hits(player)) {
@@ -87,7 +118,7 @@ function draw() {
   }
 
   //
-  // collisions entre tirs ennemy et mon player
+  // collisions entre tirs enemy et mon player
   //
   for (enemyFire of enemyFires) {
     if (enemyFire.hits(player)) {
@@ -99,7 +130,19 @@ function draw() {
   }
 
   //
-  // collisions entre les tirs du player et les vaisseaux enemy.
+  // collisions entre drone et mon player
+  //
+  for (let drone of drones) {
+    if (drone.hits(player)) {
+      console.log("crashed");
+      gameover = true;
+      alert("Crashed ! GAME OVER !!!");
+      document.location.reload();
+    }
+  }
+
+  //
+  // collisions entre les tirs du player et les vaisseaux enemy
   //
   playerFires.forEach(function (playerFire, i) {
     enemies.forEach(function (enemy, j) {
@@ -113,6 +156,24 @@ function draw() {
     });
   });
 
+  //
+  // collisions entre les tirs du player et les drones
+  //
+  playerFires.forEach(function (playerFire, i) {
+    drones.forEach(function (drone, k) {
+      if (playerFire.hits(drone)) {
+        console.log("Boom!");
+        // enlever le drone en question
+        drones.splice(k, 1);
+        // enlever le tir en question
+        playerFires.splice(i, 1);
+      }
+    });
+  });
+
+  //
+  // affichage time
+  //
   ctx.font = "100px Arial";
   ctx.textAlign = "right";
   ctx.fillStyle = "red";
@@ -136,8 +197,10 @@ function startGame() {
   time = 0;
   playMusic();
   player = new Player();
-  playerFire = new PlayerFire();
-  enemyFire = new EnemyFire();
+  // playerFire = new PlayerFire(); // en statique pour reglage
+  // enemy = new Enemy(); // en statique pour reglage
+  // enemyFire = new EnemyFire(); // en statique pour reglage
+  // drone = new Drone(); // en statique pour reglage
   raf = requestAnimationFrame(animeLoop);
 }
 
