@@ -53,14 +53,6 @@ function draw() {
   // enemy.draw();
 
   //
-  // move + draw de tous les tirs enemies
-  //
-  enemyFires.forEach(function (el) {
-    el.move();
-    el.draw();
-  });
-
-  //
   // générer un new enemy toutes les 250 frames
   //
   if (frames % 250 === 0) {
@@ -77,7 +69,7 @@ function draw() {
   // }
 
   //
-  // décalage, tracer et tirs de chaque vaisseau enemy vers le bas
+  // décalage et tracer de chaque vaisseau enemy vers le bas, avec tirs automatiques toutes les 2 secondes 
   //
   enemies.forEach(function (el) {
     el.y += 10;
@@ -85,6 +77,14 @@ function draw() {
     // setInterval(function () {
     //   el.shot();
     // }, 2000);
+  });
+
+  //
+  // move + draw de tous les tirs enemies
+  //
+  enemyFires.forEach(function (el) {
+    el.move();
+    el.draw();
   });
 
   // //
@@ -122,7 +122,7 @@ function draw() {
   //
   // collisions entre tirs enemy et mon player
   //
-  for (enemyFire of enemyFires) {
+  for (let enemyFire of enemyFires) {
     if (enemyFire.hits(player)) {
       console.log("touched");
       gameover = true;

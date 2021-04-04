@@ -143,7 +143,6 @@ class Enemy {
 //     case "W":
 //       console.log("fire");
 //       enemy.shot();
-//       enemyFire.play();
 //       break;
 //   }
 // });
