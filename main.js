@@ -15,6 +15,8 @@ let raf;
 let frames = 0;
 let gameover;
 let score;
+// let explosion; // en statique pour reglage
+let explosions = [];
 
 function playMusic() {
   let music = document.getElementById("soundTrack");
@@ -69,7 +71,7 @@ function draw() {
   // }
 
   //
-  // décalage et tracer de chaque vaisseau enemy vers le bas, avec tirs automatiques toutes les 2 secondes 
+  // décalage et tracer de chaque vaisseau enemy vers le bas, avec tirs automatiques toutes les 2 secondes
   //
   enemies.forEach(function (el) {
     el.y += 10;
@@ -137,6 +139,7 @@ function draw() {
   for (let drone of drones) {
     if (drone.hits(player)) {
       console.log("crashed");
+      explosions.push(explosion);
       gameover = true;
       alert("Crashed ! GAME OVER !!!");
       document.location.reload();
@@ -174,6 +177,8 @@ function draw() {
       }
     });
   });
+
+  // explosion.draw();
 }
 
 function scoreDisplay() {
@@ -204,6 +209,7 @@ function startGame() {
   // enemy = new Enemy(); // en statique pour reglage
   // enemyFire = new EnemyFire(); // en statique pour reglage
   // drone = new Drone(); // en statique pour reglage
+  explosion = new Explosion(); // en statique pour reglage
   raf = requestAnimationFrame(animeLoop);
 }
 

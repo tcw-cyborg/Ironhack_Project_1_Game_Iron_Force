@@ -34,6 +34,12 @@ class Drone {
       player.y + player.h >= this.y
     );
   }
+
+  explode() {
+    explosions.push(new Explosion(drone.x, drone.y));
+    const audio = new Audio("../codeFiles/ressources/sounds/playerFire.mp3");
+    audio.play();
+  }
 }
 
 // 
