@@ -39,6 +39,12 @@ class Enemy {
       player.y + player.h >= this.y
     );
   }
+
+  explode() {
+    explosions.push(new Explosion(this.x, this.y));
+    const audio = new Audio("../codeFiles/ressources/sounds/explosionSound.mp3");
+    audio.play();
+  }
 }
 
 // //

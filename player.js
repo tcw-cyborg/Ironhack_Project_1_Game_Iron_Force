@@ -26,7 +26,7 @@ class Player {
 
   explode() {
     explosions.push(new Explosion(player.x, player.y));
-    const audio = new Audio("../codeFiles/ressources/sounds/playerFire.mp3");
+    const audio = new Audio("../codeFiles/ressources/sounds/explosionSound.mp3");
     audio.play();
   }
 }

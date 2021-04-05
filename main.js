@@ -82,7 +82,7 @@ function draw() {
   });
 
   //
-  // move + draw de tous les tirs enemies
+  // move + draw de tous les tirs enemy
   //
   enemyFires.forEach(function (el) {
     el.move();
@@ -134,12 +134,11 @@ function draw() {
   }
 
   //
-  // collisions entre drone et mon player
+  // collisions entre drones et mon player
   //
   for (let drone of drones) {
     if (drone.hits(player)) {
       console.log("crashed");
-      explosions.push(explosion);
       gameover = true;
       alert("Crashed ! GAME OVER !!!");
       document.location.reload();
@@ -147,38 +146,52 @@ function draw() {
   }
 
   //
-  // collisions entre les tirs du player et les vaisseaux enemy
+  // collisions entre les tirs du player et les vaisseaux enemy = +2 points
+  // retrait de 2 points si enemy passe la frontière
   //
   playerFires.forEach(function (playerFire, i) {
     enemies.forEach(function (enemy, j) {
       if (playerFire.hits(enemy)) {
         console.log("Boom!");
+        explodeSound();
         // enlever l'enemi en question
         enemies.splice(j, 1);
-        score += 2;
         // enlever le tir en question
         playerFires.splice(i, 1);
+        // ajouter 2 points au score pour chaque enemy détruit
+        score += 2;
+        // retirer 2 points pour un enemy qui passe la frontière
+      } else if (enemy.y > 2700) {
+        enemies.splice(j, 1);
+        score -= 2;
       }
     });
   });
 
   //
-  // collisions entre les tirs du player et les drones
+  // collisions entre les tirs du player et les drones = +1 point
+  // retrait de 1 point si drone passe la frontière
   //
   playerFires.forEach(function (playerFire, i) {
     drones.forEach(function (drone, k) {
       if (playerFire.hits(drone)) {
         console.log("Boom!");
+        explodeSound();
         // enlever le drone en question
         drones.splice(k, 1);
-        score++;
         // enlever le tir en question
         playerFires.splice(i, 1);
+        // ajouter 1 point au score pour chaque drone détruit
+        score++;
+        // retirer 1 point pour chaque drone qui passe la frontière
+      } else if (drone.y > 2700) {
+        drones.splice(k, 1);
+        score--;
       }
     });
   });
 
-  // explosion.draw();
+  // explosion.draw(); // en statique pour reglage
 }
 
 function scoreDisplay() {
@@ -209,7 +222,7 @@ function startGame() {
   // enemy = new Enemy(); // en statique pour reglage
   // enemyFire = new EnemyFire(); // en statique pour reglage
   // drone = new Drone(); // en statique pour reglage
-  explosion = new Explosion(); // en statique pour reglage
+  // explosion = new Explosion(); // en statique pour reglage
   raf = requestAnimationFrame(animeLoop);
 }
 

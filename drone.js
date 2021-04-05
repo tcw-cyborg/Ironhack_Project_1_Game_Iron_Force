@@ -36,8 +36,8 @@ class Drone {
   }
 
   explode() {
-    explosions.push(new Explosion(drone.x, drone.y));
-    const audio = new Audio("../codeFiles/ressources/sounds/playerFire.mp3");
+    explosions.push(new Explosion(this.x, this.y));
+    const audio = new Audio("../codeFiles/ressources/sounds/explosionSound.mp3");
     audio.play();
   }
 }
