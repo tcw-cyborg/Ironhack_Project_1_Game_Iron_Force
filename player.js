@@ -11,11 +11,19 @@ class Player {
       this.y = H - this.h - 500;
     };
     img.src = "../codeFiles/ressources/images/player.png";
+
+    // const img2 = document.createElement("img");
+    // img2.onload = () => {
+    //   this.img2 = img2;
+    // }
+    // img2.src = "../codeFiles/ressources/explosions/exb_015.png";
   }
 
   draw() {
     if (!this.img) return;
     ctx.drawImage(this.img, this.x, this.y, this.w, this.h);
+    // if(gameover === true);
+    // ctx.drawImage(this.img2, this.x, this.y, this.w, this.h);
   }
 
   shot() {

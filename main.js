@@ -61,24 +61,15 @@ function draw() {
     enemies.push(new Enemy());
   }
 
-  // const randFrames = Math.floor(200 + Math.random() * 300); // [200..500]
-  // if (frames % 300 === 0) {
-  //   // parmi les enemies, on va en tirer un au sort et le faire tirer (toutes les 2 secondes, tant qu'il n'est pas détruit)
-  //   const enemyShooter = Math.floor(randFrames + Math.random() * enemies.length);
-  //   setInterval(function () {
-  //     enemyShooter.shot();
-  //   }, 2000);
-  // }
-
   //
   // décalage et tracer de chaque vaisseau enemy vers le bas, avec tirs automatiques toutes les 2 secondes
   //
   enemies.forEach(function (el) {
     el.y += 10;
     el.draw();
-    // setInterval(function () {
-    //   el.shot();
-    // }, 2000);
+    if (frames % 150 === 0) {
+      el.shot();
+    }
   });
 
   //
@@ -160,12 +151,17 @@ function draw() {
         playerFires.splice(i, 1);
         // ajouter 2 points au score pour chaque enemy détruit
         score += 2;
-        // retirer 2 points pour un enemy qui passe la frontière
-      } else if (enemy.y > 2700) {
+      }
+      // retirer 2 points pour un enemy qui passe la frontière et nettoyage tableau enemies
+      if (enemy.y > 2700) {
         enemies.splice(j, 1);
         score -= 2;
       }
     });
+    // retirer les tirs perdus du player de son tableau pour nettoyage
+    if (playerFire.y < 20) {
+      playerFires.splice(i, 1);
+    }
   });
 
   //
@@ -173,22 +169,27 @@ function draw() {
   // retrait de 1 point si drone passe la frontière
   //
   playerFires.forEach(function (playerFire, i) {
-    drones.forEach(function (drone, k) {
+    drones.forEach(function (drone, j) {
       if (playerFire.hits(drone)) {
         console.log("Boom!");
         explodeSound();
         // enlever le drone en question
-        drones.splice(k, 1);
+        drones.splice(j, 1);
         // enlever le tir en question
         playerFires.splice(i, 1);
-        // ajouter 1 point au score pour chaque drone détruit
+        // ajouter 1 points au score pour chaque drone détruit
         score++;
-        // retirer 1 point pour chaque drone qui passe la frontière
-      } else if (drone.y > 2700) {
-        drones.splice(k, 1);
+      }
+      // retirer 1 point pour un drone qui passe la frontière et nettoyage tableau drones
+      if (drone.y > 2700) {
+        drones.splice(j, 1);
         score--;
       }
     });
+    // retirer les tirs perdus du player de son tableau pour nettoyage
+    if (playerFire.y < 20) {
+      playerFires.splice(i, 1);
+    }
   });
 
   // explosion.draw(); // en statique pour reglage
