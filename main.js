@@ -67,7 +67,7 @@ function draw() {
   enemies.forEach(function (el) {
     el.y += 10;
     el.draw();
-    if (frames % 150 === 0) {
+    if (frames % 125 === 0) {
       el.shot();
     }
   });
@@ -86,9 +86,9 @@ function draw() {
   // drone.draw();
 
   //
-  // générer un new drone toutes les 200 frames
+  // générer un new drone toutes les 150 frames
   //
-  if (frames % 200 === 0) {
+  if (frames % 150 === 0) {
     drones.push(new Drone());
   }
 
@@ -96,7 +96,7 @@ function draw() {
   // decalage et tracer de chaque drone vers le bas
   //
   drones.forEach(function (el) {
-    el.y += 15;
+    el.y += 13;
     el.draw();
   });
 
@@ -123,6 +123,15 @@ function draw() {
       document.location.reload();
     }
   }
+
+  //
+  // retirer les tirs perdus des vaisseaux enemy de son tableau pour nettoyage
+  //
+  enemyFires.forEach(function (enemyFire, l) {
+    if (enemyFire.y > 2700) {
+      enemyFires.splice(l, 1);
+    }
+  });
 
   //
   // collisions entre drones et mon player
