@@ -62,7 +62,7 @@ function draw() {
   }
 
   //
-  // décalage et tracer de chaque vaisseau enemy vers le bas, avec tirs automatiques toutes les 2 secondes
+  // décalage et tracer de chaque vaisseau enemy vers le bas, avec action tirs automatiques
   //
   enemies.forEach(function (el) {
     el.y += 10;
@@ -192,6 +192,9 @@ function draw() {
     }
   });
 
+  // //
+  // // draw enemy en statique pour reglage
+  // //
   // explosion.draw(); // en statique pour reglage
 }
 
