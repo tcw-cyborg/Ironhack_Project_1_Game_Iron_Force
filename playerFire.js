@@ -9,7 +9,7 @@ class PlayerFire {
     img.onload = () => {
       this.img = img;
     };
-    img.src = "../codeFiles/ressources/images/playerFire.png";
+    img.src = "ressources/images/playerFire.png";
   }
 
   draw() {

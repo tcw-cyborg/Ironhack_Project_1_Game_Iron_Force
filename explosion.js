@@ -14,7 +14,7 @@ class Explosion {
       // this.x = x;
       // this.y = y;
     };
-    imgExplosion.src = "../codeFiles/ressources/explosions/exb_015.png";
+    imgExplosion.src = "ressources/explosions/exb_015.png";
   }
 
   draw() {
@@ -24,6 +24,6 @@ class Explosion {
 }
 
 function explodeSound() {
-  const audio = new Audio("../codeFiles/ressources/sounds/explosionSound.mp3");
+  const audio = new Audio("ressources/sounds/explosionSound.mp3");
   audio.play();
 }

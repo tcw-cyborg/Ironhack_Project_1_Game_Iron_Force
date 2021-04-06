@@ -9,7 +9,7 @@ class EnemyFire {
     img.onload = () => {
       this.img = img;
     };
-    img.src = "../codeFiles/ressources/images/enemyFire.png";
+    img.src = "ressources/images/enemyFire.png";
   }
 
   draw() {

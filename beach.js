@@ -1,5 +1,5 @@
 const imgBeach = new Image();
-imgBeach.src = "../codeFiles/ressources/images/beach.png";
+imgBeach.src = "ressources/images/beach.png";
 
 imgBeach.onload = function () {
   canvas;

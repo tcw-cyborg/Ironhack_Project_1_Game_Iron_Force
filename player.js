@@ -10,13 +10,13 @@ class Player {
       this.x = W / 2 - this.w / 2;
       this.y = H - this.h - 500;
     };
-    img.src = "../codeFiles/ressources/images/player.png";
+    img.src = "ressources/images/player.png";
 
     // const img2 = document.createElement("img");
     // img2.onload = () => {
     //   this.img2 = img2;
     // }
-    // img2.src = "../codeFiles/ressources/explosions/exb_015.png";
+    // img2.src = "ressources/explosions/exb_015.png";
   }
 
   draw() {
@@ -28,13 +28,13 @@ class Player {
 
   shot() {
     playerFires.push(new PlayerFire(50, player.x + 0.5 * player.w, player.y - player.h));
-    const audio = new Audio("../codeFiles/ressources/sounds/playerFire.mp3");
+    const audio = new Audio("ressources/sounds/playerFire.mp3");
     audio.play();
   }
 
   explode() {
     explosions.push(new Explosion(player.x, player.y));
-    const audio = new Audio("../codeFiles/ressources/sounds/explosionSound.mp3");
+    const audio = new Audio("ressources/sounds/explosionSound.mp3");
     audio.play();
   }
 }

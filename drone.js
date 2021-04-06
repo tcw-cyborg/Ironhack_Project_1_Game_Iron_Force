@@ -18,7 +18,7 @@ class Drone {
       this.x = random(0, W - this.w);
       this.y = -this.h;
     };
-    img.src = "../codeFiles/ressources/images/drone.png";
+    img.src = "ressources/images/drone.png";
   }
 
   draw() {
@@ -37,7 +37,7 @@ class Drone {
 
   explode() {
     explosions.push(new Explosion(this.x, this.y));
-    const audio = new Audio("../codeFiles/ressources/sounds/explosionSound.mp3");
+    const audio = new Audio("ressources/sounds/explosionSound.mp3");
     audio.play();
   }
 }

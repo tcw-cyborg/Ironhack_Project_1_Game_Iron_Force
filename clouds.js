@@ -1,5 +1,5 @@
 const imgClouds = new Image();
-imgClouds.src = "../codeFiles/ressources/images/clouds.png";
+imgClouds.src = "ressources/images/clouds.png";
 
 imgClouds.onload = function () {
   canvas;

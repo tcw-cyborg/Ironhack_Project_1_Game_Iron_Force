@@ -17,7 +17,7 @@ class Enemy {
       this.x = random(0, W - this.w);
       this.y = -this.h;
     };
-    img.src = "../codeFiles/ressources/images/enemy.png";
+    img.src = "ressources/images/enemy.png";
   }
 
   draw() {
@@ -27,7 +27,7 @@ class Enemy {
 
   shot() {
     enemyFires.push(new EnemyFire(15, this.x + 0.5 * this.w, this.y - this.h));
-    const audio = new Audio("../codeFiles/ressources/sounds/enemyFire.mp3");
+    const audio = new Audio("ressources/sounds/enemyFire.mp3");
     audio.play();
   }
 
@@ -42,20 +42,10 @@ class Enemy {
 
   explode() {
     explosions.push(new Explosion(this.x, this.y));
-    const audio = new Audio("../codeFiles/ressources/sounds/explosionSound.mp3");
+    const audio = new Audio("ressources/sounds/explosionSound.mp3");
     audio.play();
   }
 }
-
-// //
-// // tirs auto enemy
-// //
-// let intervalEnemyFires = setInterval(function () {
-//   enemy.shot();
-//   enemyFire.play();
-// }, 3000);
-// // stop tirs auto enemy
-// clearInterval(intervalEnemyFires);
 
 //
 // reglage commandes enemy
