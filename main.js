@@ -67,7 +67,7 @@ function draw() {
   enemies.forEach(function (el) {
     el.y += 10;
     el.draw();
-    if (frames % 125 === 0) {
+    if (frames % 100 === 0) {
       el.shot();
     }
   });
