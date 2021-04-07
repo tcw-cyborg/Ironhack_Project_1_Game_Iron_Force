@@ -163,12 +163,12 @@ function draw() {
       }
       // retirer 2 points pour un enemy qui passe la frontière et nettoyage tableau enemies
       if (enemy.y > 2700) {
-        enemies.splice(j, 1);
         score -= 2;
+        enemies.splice(j, 1);
       }
     });
     // retirer les tirs perdus du player de son tableau pour nettoyage
-    if (playerFire.y < 20) {
+    if (playerFire.y < 10) {
       playerFires.splice(i, 1);
     }
   });
@@ -191,14 +191,10 @@ function draw() {
       }
       // retirer 1 point pour un drone qui passe la frontière et nettoyage tableau drones
       if (drone.y > 2700) {
-        drones.splice(j, 1);
         score--;
+        drones.splice(j, 1);
       }
     });
-    // retirer les tirs perdus du player de son tableau pour nettoyage
-    if (playerFire.y < 20) {
-      playerFires.splice(i, 1);
-    }
   });
 
   // //
